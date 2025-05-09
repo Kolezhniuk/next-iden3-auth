@@ -1,0 +1,20 @@
+diff --git a/node_modules/@iden3/js-iden3-auth/dist/node/esm/state/resolver.js b/node_modules/@iden3/js-iden3-auth/dist/node/esm/state/resolver.js
+index bb2e3eb..8160150 100644
+--- a/node_modules/@iden3/js-iden3-auth/dist/node/esm/state/resolver.js
++++ b/node_modules/@iden3/js-iden3-auth/dist/node/esm/state/resolver.js
+@@ -10,6 +10,7 @@ export class EthStateResolver {
+     async resolve(id, state) {
+         const url = new URL(this.rpcUrl);
+         const ethersProvider = new ethers.providers.JsonRpcProvider({
++            skipFetchSetup: true,
+             url: url.href,
+             user: url.username,
+             password: url.password
+@@ -59,6 +60,7 @@ export class EthStateResolver {
+     async rootResolve(state) {
+         const url = new URL(this.rpcUrl);
+         const ethersProvider = new ethers.providers.JsonRpcProvider({
++            skipFetchSetup: true,
+             url: url.href,
+             user: url.username,
+             password: url.password

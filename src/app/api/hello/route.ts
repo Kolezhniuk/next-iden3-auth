@@ -1,6 +1,5 @@
-import { auth, resolver } from "@iden3/js-iden3-auth";
+import { auth, resolver, protocol } from "@iden3/js-iden3-auth";
 import { NextResponse } from "next/server";
-
 
 export async function GET() {
   const res = await t();
@@ -51,13 +50,17 @@ async function t() {
   // EXECUTE VERIFICATION
   const verifier = await auth.Verifier.newVerifier({
     stateResolver: resolvers,
-    circuitsDir: "/Users/dimak/Documents/work/js-iden3-auth/test/testdata",
+    circuitsDir: "<circuitsDir>",
     ipfsGatewayURL: "https://ipfs-proxy-cache.privado.id",
   });
 
   const opts = {
-    AcceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
+    acceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
   };
-  const authResponse = await verifier.fullVerify(tokenStr, authRequest, opts);
-  console.log(authResponse);
+  const authResponse = await verifier.fullVerify(
+    tokenStr,
+    authRequest as protocol.AuthorizationRequestMessage,
+    opts
+  );
+  return authResponse;
 }
