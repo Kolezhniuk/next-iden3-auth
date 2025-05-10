@@ -2,29 +2,31 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // webpack: function (config, options) {
-  //   // if (!options.isServer) {
-  //   // config.resolve.fallback.fs = false;
-  //   // }
-  //   // config.resolve.fallback = { fs: false, net: false, tls: false };
-  //   config.resolve.fallback = {
-  //     fs: false,
-  //     stream: false,
-  //     path: false,
-  //     crypto: false,
-  //     os: false,
-  //   };
-  //   console.log(config.experiments);
-  //   config.experiments = {
-  //     ...config.experiments,
-  //     asyncWebAssembly: true,
-  //     // layers: false,
-  //     // layers: true, // Temporarily commented out
-  //     // syncWebAssembly: true, // Temporarily commented out
-  //     topLevelAwait: true,
-  //   };
-  //   console.log(config.experiments);
-  //   return config;
+  // webpack: function (config) {
+    // if (!options.isServer) {
+    // config.resolve.fallback.fs = false;
+    // }
+    // config.resolve.fallback = { fs: false, net: false, tls: false };
+    // config.resolve.alias = {
+    //   ...config.resolve.alias,
+    //   // Provide a browser-compatible version of web-worker
+    //   "web-worker": "next/dist/compiled/web-worker",
+    // };
+    // config.experiments = {
+    //   asyncWebAssembly: true,
+    //   syncWebAssembly: true,
+    //   layers: true,
+    //   topLevelAwait: true,
+    // };
+    // config.resolve.fallback = {
+    //   fs: false,
+    //   path: false,
+    //   dns: false,
+    //   net: false,
+    //   tls: false,
+    //   "rdf-canonize-native": false,
+    // };
+    // return config;
   // },
 };
 
