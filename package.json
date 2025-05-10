@@ -14,7 +14,8 @@
     "@iden3/js-jwz": "^1.9.0",
     "next": "15.3.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "web-worker": "1.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -25,5 +26,16 @@
     "eslint-config-next": "15.3.2",
     "patch-package": "^8.0.0",
     "typescript": "^5"
+  },
+  "overrides": {
+    "ffjavascript": {
+      "web-worker": "1.5.0"
+    },
+    "@iden3/js-jwz": {
+      "web-worker": "1.5.0"
+    },
+    "@iden3/js-iden3-auth": {
+      "web-worker": "1.5.0"
+    }
   }
 }

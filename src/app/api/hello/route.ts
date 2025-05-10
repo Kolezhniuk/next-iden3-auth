@@ -56,6 +56,7 @@ async function t() {
 
   const opts = {
     acceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
+    acceptedProofGenerationDelay: 365 * 24 * 60 * 60 * 1000, // 1 year
   };
   const authResponse = await verifier.fullVerify(
     tokenStr,
